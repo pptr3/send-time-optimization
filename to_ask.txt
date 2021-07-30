@@ -1,0 +1,51 @@
+ -Open+Click rate del Contatto, divisa in fasce orarie [0,24] con granularità di 1h (parametro), normalizzata in [0,1].
+Significa che devo calcolare quante mail il contatto X ha aperto su quelle inviate all'ora 0, 1, 2, .., 24? Quindi per ogni row, avrò 24 colonne?
+- quante volte il contatto x ha aperto/clicakto un messaggio in quella fascia oraria diviso il totale delle volte che il contatto ha aperto tutti i messaggi
+(messaggi aperti fascia oraria 0-1/ numero totali di mail aperte in generale). Questa cosa va fatta solo per il training set!!
+
+
+- Essendo che un contatto apre lo stesso messaggio più volte, avrò row duplicate giusto?
+- Eliminare i duplicati
+
+
+
+- sent che non sono stati aperti
+- rimandono uguali tutti tranne le fitSA e ftAC
+
+
+
+- Per nuovi Contatti inserire Open+Click rate media dei Contatti nello storico
+Finito di costruire il mio dataset, mi calcolo questa statistica e la tengo da parte, giusto?
+- Questa cosa va fatta solo per il training set. Mi tengo da parte questi 24 valori e li assegno quando incontro un nuovo contatto nel test set.
+
+
+
+- Open+Click rate della Comunicazione, divisa in fasce orarie [0,24] con granularità di 1h (parametro), normalizzata in [0,1].
+Per ogni contatto X, avrò il valore open/sent della Comunicazione X inviata all'ora 1, 2, .., 24. Quindi anche qui avrò 24 colonne aggiuntive * numbero di Comunicazione.
+Quindi, tra le Comunicazioni inviate all'ora 1, quante ne ha aperte il contatto X? Quindi Ogni contatto avrà lo stesso valore per queste colonne.
+- numero di messaggi aperti tra le 0-1 di quella Comm / Quanti messaggi distingi sono stati aperti/cickati in quella comunicazione? (denominatore) ecc per 1-2 (solo 24 colonne perchè ho solo una comm per ogni row)
+
+
+
+- Fitness Sent-Apertura (fitSA) e Fitness Apertura-Click (fitAC)
+Per ogni row, avrò una colonna per ciascua fit con questo numero, giusto?
+
+
+
+- ore-minuti di invio Messaggio, normalizzate in [0,1]
+Qui faccio una colonna per ore e una per invio?
+- esempio 12:10-> converti tutto in min e poi normalizzo in 0-1
+
+
+- Gli altri attributi del dataset? Quali tengo e quali scarto?
+- feature per learning bastano solo le Feature del singolo mex. Tutte le altre non vanno usate.
+Da qualche parte tenere gli ID contatto, Mex e Comm per sapere dopo a chi inviare il mex.
+
+
+- Quale è la y del modello?
+- evento sent mex -> convertito in minuti -> norm in 0-1
+
+
+
+- open mail e non clicka, poi la riapre e poi clicka
+tenere prima apertura e poi primo click
