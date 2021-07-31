@@ -16,7 +16,6 @@ Finito di costruire il mio dataset, mi calcolo questa statistica e la tengo da p
 
 
 - Open+Click rate della Comunicazione, divisa in fasce orarie [0,24] con granularità di 1h (parametro), normalizzata in [0,1].
-- Quindi, tra le Comunicazioni inviate all'ora 1, quante ne ha aperte il contatto X? Quindi Ogni contatto avrà lo stesso valore per queste colonne.
 - numero di messaggi aperti tra le 0-1 di quella Comm / Quanti messaggi distinti sono stati aperti/clickati in quella comunicazione? (denominatore) ecc per 1-2 (solo 24 colonne perchè ho solo una comm per ogni row)
 
 
